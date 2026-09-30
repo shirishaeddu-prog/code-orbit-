@@ -1,0 +1,28 @@
+import pandas as pd
+
+# Read Excel file
+df = pd.read_excel("sales_data.xlsx")
+
+print("Original Data:")
+print(df)
+
+# Remove duplicate rows
+df = df.drop_duplicates()
+
+# Fill missing Age with average
+df["Age"] = df["Age"].fillna(df["Age"].mean())
+
+# Fill missing Salary
+df["Salary"] = df["Salary"].fillna(df["Salary"].mean())
+
+# Remove extra spaces from names
+df["Name"] = df["Name"].str.strip()
+
+print("\nCleaned Data:")
+print(df)
+
+# Save cleaned data
+df.to_excel("cleaned_sales_data.xlsx", index=False)
+
+print("\nData cleaning completed successfully!")
+print("File saved as: cleaned_sales_data.xlsx")
