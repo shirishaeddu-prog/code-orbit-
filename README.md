@@ -1,70 +1,79 @@
-# code-orbit-
+TASK_2 
+
+Sales Data Analysis with Pandas 
+
+ Task Overview
+
+This project is part of the CodeOrbit Tech Data Analyst Internship.
+
+The objective of this task is to analyze a small sales dataset using Python and Pandas. The analysis focuses on calculating important sales metrics, grouping the data, and identifying useful business insights.
+
+Objectives
+
+- Analyze a sales dataset using Pandas.
+- Calculate total sales.
+- Calculate average order value.
+- Identify top-selling products.
+- Group sales by category, region, or time period.
+- Summarize the findings using simple data analysis.
+
+ Tools and Technologies
+
+- Python
+- Pandas
+- Jupyter Notebook / Google Colab / Pydroid 3
+- CSV or Excel Dataset
+
+ Dataset
+
+The dataset contains sample sales information such as:
+
+- Order ID
+- Product
+- Category
+- Region
+- Quantity
+- Price
+- Sales
+- Order Date
+
+Analysis Performed
+
+ 1. Total Sales
+Calculated the total sales generated from all orders.
+
+  2. Average Order Value
+Calculated the average value of each order.
+
+3. Top Products
+Identified the products that generated the highest sales.
+
+ 4. Category-wise Analysis
+Grouped the sales data by product category to compare sales performance.
+
+ 5. Region-wise Analysis
+Grouped the data by region to understand sales performance in different regions.
+
+ 6. Time-wise Analysis
+Analyzed sales based on the order date to understand sales trends over time.
+
+Key Metrics
+
+The following metrics were calculated:
+
+- Total Sales
+- Average Order Value
+- Total Quantity Sold
+- Top-Selling Product
+- Category-wise Sales
+- Region-wise Sales
+
+ Python Libraries Used
+
+```python
+import pandas as pd# code-orbit-
 # Data Cleaning in Excel/Python
 
 ## Internship
 CodeOrbit Tech - Data Analyst Internship
 
-## Task 1: Data Cleaning in Excel/Python
-
-### Objective
-The main objective of this task is to clean a small dataset by handling missing values, removing duplicate records, and improving the data format using Python and Pandas.
-
-## Tools Used
-
-- Python
-- Pandas
-- Excel
-- OpenPyXL
-- Pydroid 3
-
-## Dataset
-
-The dataset contains the following columns:
-
-- Name
-- Age
-- Salary
-
-## Data Cleaning Process
-
-The following steps were performed:
-
-1. Loaded the Excel file using Pandas.
-2. Checked the original dataset.
-3. Removed duplicate rows.
-4. Handled missing values.
-5. Replaced the missing Age with the average Age.
-6. Replaced missing Salary values with the average Salary.
-7. Removed extra spaces from the Name column.
-8. Saved the cleaned data into a new Excel file.
-
-## Python Code
-
-```python
-import pandas as pd
-
-# Read Excel file
-df = pd.read_excel("sales_data.xlsx")
-
-print("Original Data:")
-print(df)
-
-# Remove duplicate rows
-df = df.drop_duplicates()
-
-# Fill missing Age with average
-df["Age"] = df["Age"].fillna(df["Age"].mean())
-
-# Fill missing Salary with average
-df["Salary"] = df["Salary"].fillna(df["Salary"].mean())
-
-# Remove extra spaces
-df["Name"] = df["Name"].str.strip()
-
-print("\nCleaned Data:")
-print(df)
-
-# Save cleaned data
-df.to_excel("cleaned_sales_data.xlsx", index=False)
-
-print("\nData cleaning completed successfully!")
